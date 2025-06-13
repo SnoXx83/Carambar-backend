@@ -1,0 +1,21 @@
+###
+GET http://localhost:3000/jokes
+
+###
+
+GET http://localhost:3000/jokes/random
+
+###
+
+GET http://localhost:3000/jokes/1
+
+###
+
+POST http://localhost:3000/jokes
+Content-Type: application/json
+
+{
+    "question": "Quel est le sport le plus silencieux ?",
+    "response": "Le para-chuuuuute."
+}
+
