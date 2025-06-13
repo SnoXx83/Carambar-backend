@@ -1,10 +1,17 @@
 import express from 'express';
 import sequelize from '../config/db.js';
-import Joke from '../models/joke.js';
+import jokeRoutes from './routes/routes.js'
 
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.send('Hello World !');
+});
+
+app.use("/api/jokes", jokeRoutes)
 
 const start = async () => {
     try {
@@ -24,9 +31,6 @@ const start = async () => {
     }
 };
 
-app.get('/', (req, res) => {
-    res.send('Hello World !');
-});
 
 
 start();
