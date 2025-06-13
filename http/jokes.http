@@ -3,11 +3,11 @@ GET http://localhost:3000/api/jokes
 
 ###
 
-GET http://localhost:3000/jokes/random
+GET http://localhost:3000/api/jokes/random
 
 ###
 
-GET http://localhost:3000/jokes/1
+GET http://localhost:3000/api/jokes/1
 
 ###
 
@@ -15,7 +15,7 @@ POST http://localhost:3000/api/jokes
 Content-Type: application/json
 
 {
-    "question": "Quel est le sport le plus silencieux ?",
-    "response": "Le para-chuuuuute."
+    "question": "Quelle est la femelle du hamster ?",
+    "response": "L’Amsterdam"
 }
 
