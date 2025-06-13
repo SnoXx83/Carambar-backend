@@ -1,3 +1,4 @@
+import sequelize from "../../config/db.js";
 import Joke from "../../models/joke.js";
 
 export const JokeController = {
@@ -34,6 +35,18 @@ export const JokeController = {
         } catch (error) {
             console.error("Error getting joke by ID: ", error);
             res.status(500).json({ message: "Error retrieving joke", error: error.message });
+        }
+    },
+    getRandom: async (req, res) => {
+        try {
+            const joke = await Joke.findOne({ order: sequelize.random() });
+            if(!joke){
+                return res.status(404).json({ meessage: "No jokes found"});
+            }
+            res.status(200).json(joke);
+        } catch (error) {
+            console.error("Error getting random joke: ", error);
+            res.status(500).json({ message: "Error to get a random joke", error: error.message});
         }
     },
 };
