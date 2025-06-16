@@ -1,9 +1,12 @@
 import express from 'express';
 import sequelize from '../config/db.js';
-import jokeRoutes from './routes/routes.js'
+import jokeRoutes from './routes/routes.js';
+import cors from 'cors';
 
 const app = express();
-const port = 3000;
+const port = 4000;
+
+app.use(cors());
 
 app.use(express.json());
 
